@@ -45,6 +45,8 @@ Features - Services - Core - UserInterface - Shared
 프로젝트 루트에서 실행할 수 있는 명령어입니다.
 - make init : `프로젝트 이름과 organization을 입력하여 프로젝트 기본 세팅`
   - swift Scripts/InitEnvironment.swift
+  - 터미널로 명령 받은 값을 통해 EnvironmentPlugin의 ProjectEnvironment.swift 파일을 초기화 한다. 
+  - ⚠️ 원본 상태에서 해야 에러가 안남,  주석을 달거나 줄을 바꾸면 밀리 수 있음 
 
 - make signing : `프로젝트 Team Signing`
   - swift Scripts/CodeSigning.swift
