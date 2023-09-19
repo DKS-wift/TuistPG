@@ -84,3 +84,9 @@ tuist Scaffold(Demo/Interface/Sources/Testing/Tests/UITests)
 ```
 
 으로 Project 모듈의 Target 모듈을 직접 생성 가능합니다.
+
+
+## Plugin 생성
+1. touch Plugins/MyPlugin/Plugin.swift
+2. Plugins/Plugins/Plugins/MyPlugin 아래에 ProjectDescriptionHelpers 폴더
+3. 플러그인 내용 파일 생성 
