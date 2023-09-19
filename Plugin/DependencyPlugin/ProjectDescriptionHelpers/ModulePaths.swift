@@ -30,6 +30,7 @@ extension ModulePaths: MicroTargetPathConvertable {
 public extension ModulePaths {
     // 사용자의 액션을 처리하거나 데이터를 보여주는, 사용자와 직접 맞닿는 레이어
     enum Feature: String, MicroTargetPathConvertable {
+        case HomeFeature
         case BaseFeature
     }
 }

@@ -32,7 +32,7 @@ func registerModuleDependency() {
     registerModulePaths()
     makeProjectDirectory()
     registerXCConfig()
-
+    
     let layerPrefix = layer.rawValue.lowercased()
     let moduleEnum = ".\(layerPrefix)(.\(moduleName))"
     var targetString = "[\n"
@@ -76,7 +76,7 @@ func tab(_ count: Int) -> String {
     return tabString
 }
 
-func registerModulePaths() {
+func registerModulePaths() { // 디펜던시 플러그인에  모듈패스 enum에 현재 생성될 모듈 case 등록
     updateFileContent(
         filePath: currentPath + "Plugin/DependencyPlugin/ProjectDescriptionHelpers/ModulePaths.swift",
         finding: "enum \(layer.rawValue): String, MicroTargetPathConvertable {\n",
@@ -138,6 +138,7 @@ func makeSourceScaffold() {
 }
 
 func makeScaffold(target: MicroTargetType) {
+    
     _ = try? bash.run(
         commandName: "tuist",
         arguments: ["scaffold", "\(target.rawValue)", "--name", "\(moduleName)", "--layer", "\(layer.rawValue)"]
