@@ -1,5 +1,6 @@
 import ProjectDescription
 
+/// Projects 폴더 기준 가장 상위 모듈들 접근 Path
 public extension ProjectDescription.Path {
     static func relativeToSections(_ path: String) -> Self {
         return .relativeToRoot("Projects/\(path)")
@@ -24,6 +25,7 @@ public extension ProjectDescription.Path {
     }
 }
 
+/// 해당 모듈안의 있는 하위 모듈들 접근
 public extension TargetDependency {
     static func feature(name: String) -> Self {
         return .project(target: name, path: .relativeToFeature(name))

@@ -1,7 +1,11 @@
 import Foundation
 import ProjectDescription
 
+
+// 해당 모듈을 반환함
 public extension TargetDependency {
+    
+    ///  퓨처 모듈 반환
     static func feature(
         target: ModulePaths.Feature,
         type: MicroTargetType = .sources
@@ -12,6 +16,7 @@ public extension TargetDependency {
         )
     }
 
+    ///  도메인 모듈 반환
     static func domain(
         target: ModulePaths.Domain,
         type: MicroTargetType = .sources
@@ -22,6 +27,7 @@ public extension TargetDependency {
         )
     }
 
+    ///  코어 모듈 반환
     static func core(
         target: ModulePaths.Core,
         type: MicroTargetType = .sources
@@ -32,6 +38,7 @@ public extension TargetDependency {
         )
     }
 
+    ///  공용 모듈 반환
     static func shared(
         target: ModulePaths.Shared,
         type: MicroTargetType = .sources
@@ -42,6 +49,7 @@ public extension TargetDependency {
         )
     }
 
+    ///  UI 모듈 반환
     static func userInterface(
         target: ModulePaths.UserInterface,
         type: MicroTargetType = .sources

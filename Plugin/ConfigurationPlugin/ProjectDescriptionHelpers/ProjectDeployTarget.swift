@@ -2,7 +2,7 @@ import Foundation
 import ProjectDescription
 
 
-/// 개발환경 이름(문자열)
+/// 배포환경 이름(문자열)
 /// 각 enum -> ConfigurationName -> debug, release , 3 * 2 = 6 개
 public enum ProjectDeployTarget: String {
     case dev = "DEV" // 개발
