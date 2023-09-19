@@ -6,6 +6,7 @@ public extension ConfigurationName {
     static var prod: ConfigurationName { configuration(ProjectDeployTarget.prod.rawValue) }
 }
 
+// Configuration(name , xcconfig 경로) , 기본은 3개의 환경
 public extension Array where Element == Configuration {
     static let `default`: [Configuration] = [
         .debug(name: .dev, xcconfig: .shared),
