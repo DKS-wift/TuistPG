@@ -3,11 +3,17 @@ import DependencyPlugin
 import EnvironmentPlugin
 import ProjectDescription
 
+
+/*
+ Target = 빌드 될 프로덕트 , 하나의 실행될 앱 , 앱 ,UnitTest , UITest 등이 있다 .
+ 
+ */
+
 // MARK: - Interface
 public extension Target {
     static func interface(module: ModulePaths, spec: TargetSpec) -> Target {
         spec.with {
-            $0.sources = .interface
+            $0.sources = .interface // 소스 파일리스트 경로를 인터페이스로 설정
         }
         .toTarget(with: module.targetName(type: .interface), product: .framework)
     }
