@@ -18,7 +18,7 @@ public extension Project {
             name: name, // 모듈이름
             organizationName: env.organizationName, // 올간 이름
             options: options,
-            packages: packages,
+            packages: packages, 
             settings: settings,
             targets: targets, // 모듈 디펜던시 및 인터페이스 등 Layer 관련 정의
             schemes: targets.contains { $0.product == .app } ? // 스킴
@@ -26,7 +26,7 @@ public extension Project {
                 [.makeScheme(target: .dev, name: name)],
             fileHeaderTemplate: fileHeaderTemplate, // 파일 생성 시 기본 설명 헤더
             additionalFiles: additionalFiles,
-            resourceSynthesizers: resourceSynthesizers
+            resourceSynthesizers: resourceSynthesizers 
         )
     }
 }

@@ -14,7 +14,7 @@ public let generateEnvironment = GenerateEnvironment(rawValue: environment) ?? .
 public extension GenerateEnvironment {
     var scripts: [TargetScript] {
         switch self {
-        case .ci, .cd:
+        case .ci, .cd: 
             return []
 
         case .dev: // 개발환경에 필요한 스크립트 들을 넣어준다 .
