@@ -8,8 +8,8 @@ public enum GenerateEnvironment: String {
     case dev = "DEV"
 }
 
-let environment = ProcessInfo.processInfo.environment["TUIST_ENV"] ?? ""
-public let generateEnvironment = GenerateEnvironment(rawValue: environment) ?? .dev
+let environment = ProcessInfo.processInfo.environment["TUIST_ENV"] ?? "" //TUIST_ENV 환경변수 값 불러오기
+public let generateEnvironment = GenerateEnvironment(rawValue: environment) ?? .dev // 환경변수 값에 따른 환경 만들기
 
 public extension GenerateEnvironment {
     var scripts: [TargetScript] {
@@ -17,7 +17,7 @@ public extension GenerateEnvironment {
         case .ci, .cd:
             return []
 
-        case .dev:
+        case .dev: // 개발환경에 필요한 스크립트 들을 넣어준다 .
             return [.swiftLint]
         }
     }
