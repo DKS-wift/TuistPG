@@ -18,7 +18,7 @@ public extension GenerateEnvironment {
             return []
 
         case .dev: // 개발환경에 필요한 스크립트 들을 넣어준다 .
-            return [.swiftLint]
+          return [.needleScript, .swiftLint]
         }
     }
 }
