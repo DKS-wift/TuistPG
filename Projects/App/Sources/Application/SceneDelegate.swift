@@ -1,4 +1,5 @@
 import UIKit
+import NeedleFoundation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -10,6 +11,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let scene = (scene as? UIWindowScene) else { return }
+      
+        
+      
+      
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}
