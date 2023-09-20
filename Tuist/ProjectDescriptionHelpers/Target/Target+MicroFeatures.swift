@@ -13,7 +13,7 @@ import ProjectDescription
 public extension Target {
     static func interface(module: ModulePaths, spec: TargetSpec) -> Target {
         spec.with {
-            $0.sources = .interface // 소스 파일리스트 경로를 인터페이스로 설정 
+            $0.sources = .interface // 소스 파일리스트 경로를 인터페이스로 설정
         }
         .toTarget(with: module.targetName(type: .interface), product: .framework)
     }
