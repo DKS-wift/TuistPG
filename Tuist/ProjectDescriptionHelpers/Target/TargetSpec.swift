@@ -60,7 +60,7 @@ public struct TargetSpec: Configurable {
         self.entitlements = entitlements
         self.scripts = scripts
         self.dependencies = dependencies
-        self.settings = settings
+        self.settings = settings // Target의 BuildSettings
         self.coreDataModels = coreDataModels
         self.environment = environment
         self.launchArguments = launchArguments

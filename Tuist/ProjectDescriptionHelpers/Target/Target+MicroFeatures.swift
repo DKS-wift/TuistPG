@@ -3,6 +3,12 @@ import DependencyPlugin
 import EnvironmentPlugin
 import ProjectDescription
 
+
+/*
+ Target = 빌드 될 프로덕트 , 하나의 실행될 앱 , 앱 ,UnitTest , UITest 등이 있다 .
+ 
+ */
+
 // MARK: - Interface
 public extension Target {
     static func interface(module: ModulePaths, spec: TargetSpec) -> Target {
