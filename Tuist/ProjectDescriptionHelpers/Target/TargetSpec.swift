@@ -25,26 +25,26 @@ public struct TargetSpec: Configurable {
     public var buildRules: [BuildRule]
 
     public init(
-        name: String = "",
-        platform: Platform = env.platform,
-        product: Product = .staticLibrary,
-        productName: String? = nil,
-        bundleId: String? = nil,
-        deploymentTarget: DeploymentTarget? = env.deploymentTarget,
-        infoPlist: InfoPlist = .default,
-        sources: SourceFilesList? = .sources,
-        resources: ResourceFileElements? = nil,
-        copyFiles: [CopyFilesAction]? = nil,
-        headers: Headers? = nil,
-        entitlements: Path? = nil,
-        scripts: [TargetScript] = generateEnvironment.scripts,
-        dependencies: [TargetDependency] = [],
-        settings: Settings? = nil,
-        coreDataModels: [CoreDataModel] = [],
-        environment: [String: String] = [:],
+        name: String = "", // 타겟 이름
+        platform: Platform = env.platform, // 플랫폼 ,iOS , watchOS ..
+        product: Product = .staticLibrary, // framework , library
+        productName: String? = nil, // 빌드 후 이름 없을 경우 타겟이름과 같음
+        bundleId: String? = nil, // 번들 아이디
+        deploymentTarget: DeploymentTarget? = env.deploymentTarget, // 배포 타겟 iOS, watchOS (지원하는 기기) ??
+        infoPlist: InfoPlist = .default, // 기본 또는 커스텀
+        sources: SourceFilesList? = .sources, // 소스 경로
+        resources: ResourceFileElements? = nil, // 리소스 경로
+        copyFiles: [CopyFilesAction]? = nil, // Build Phase 관련
+        headers: Headers? = nil, // Target Header
+        entitlements: Path? = nil, // apple Login 등 사용하는 서비스에 대한 자격 증명 명시 ,  ex )Capabilities 설정
+        scripts: [TargetScript] = generateEnvironment.scripts, // 스크립트
+        dependencies: [TargetDependency] = [], // 모듈 or 외부 라이브러리 의존성
+        settings: Settings? = nil, // Target의 BuildSettings
+        coreDataModels: [CoreDataModel] = [], // 코어 데이터 모델 경로와 버전
+        environment: [String: String] = [:], // 환경 변수
         launchArguments: [LaunchArgument] = [],
         additionalFiles: [FileElement] = [],
-        buildRules: [BuildRule] = []
+        buildRules: [BuildRule] = [] // 특정 빌드 방식 정의 ??
     ) {
         self.name = name
         self.platform = platform
@@ -60,7 +60,7 @@ public struct TargetSpec: Configurable {
         self.entitlements = entitlements
         self.scripts = scripts
         self.dependencies = dependencies
-        self.settings = settings // Target의 BuildSettings
+        self.settings = settings
         self.coreDataModels = coreDataModels
         self.environment = environment
         self.launchArguments = launchArguments
@@ -72,7 +72,7 @@ public struct TargetSpec: Configurable {
         self.toTarget(with: self.name)
     }
 
-    func toTarget(with name: String, product: Product? = nil) -> Target {
+    func toTarget(with name: String, product: Product? = nil) -> Target {  // default 값으로 셋팅함
         Target(
             name: name,
             platform: platform,
