@@ -25,7 +25,7 @@ let targets: [Target] = [
         infoPlist: .file(path: "Support/Info.plist"),
         sources: ["Sources/**"],
         resources: ["Resources/**"],
-        scripts: scripts,
+        scripts: [.needleScript,.swiftLint],
         dependencies: [
             .feature(target: .HomeFeature)
         
