@@ -23,6 +23,7 @@ let dependencies = Dependencies(
     swiftPackageManager: SwiftPackageManagerDependencies(
         [
             //.remote(url: "https://github.com/airbnb/lottie-ios.git", requirement: .exact("4.2.0")),
+          .remote(url: "https://github.com/uber/needle.git", requirement: .upToNextMajor(from: "0.24.0"))
         ],
         baseSettings: .settings(
             configurations: [
